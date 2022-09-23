@@ -2,6 +2,8 @@ package day06;
 
 import org.junit.Test;
 
+import java.util.Date;
+
 /**
  * @program: code2
  * @author: Ren
@@ -42,6 +44,24 @@ public class StringBufferBuilderTest {
 
         StringBuffer sb2 = new StringBuffer();
         System.out.println(sb2.length());   //0
+    }
 
+    @Test
+    public void test1() throws InterruptedException {
+
+        long start = System.nanoTime();
+       String str = "String";
+       long end = System.nanoTime();
+       System.out.println(str + " 的执行时间为 " + (end - start) + " ns");
+
+        long start1 = System.nanoTime();
+        StringBuffer str1 = new StringBuffer("String");
+        long end1 = System.nanoTime();
+        System.out.println(str1 + " 的执行时间为 " + (end1 - start1) + " ns");
+
+        long start2 = System.nanoTime();
+        StringBuilder str2 = new StringBuilder("String");
+        long end2 = System.nanoTime();
+        System.out.println(str2 + " 的执行时间为 " + (end2 - start2) + " ns");
     }
 }
