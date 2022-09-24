@@ -41,6 +41,8 @@ public class DateTimeTest {
         //构造器一：Date()：创建一个对应当前时间的Date对象
         Date date1 = new Date();
         System.out.println(date1.toString());  //Thu Sep 22 16:58:44 CST 2022
+        java.sql.Date date= new java.sql.Date(date1.getTime());
+        System.out.println(date);  //2022-09-24
 
         System.out.println(date1.getTime());  //1663837124550
 
