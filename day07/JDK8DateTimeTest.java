@@ -15,8 +15,9 @@ public class JDK8DateTimeTest {
 
     @Test
     public void test() {
-      /*  Date date1 = new Date(2020, 9, 8); //已过时
-        System.out.println(date1);  */ //Fri Oct 08 00:00:00 CST 3920  具有偏移量
+        @SuppressWarnings("deprecation")
+        Date date1 = new Date(2020, 9, 8); //已过时
+        System.out.println(date1);   //Fri Oct 08 00:00:00 CST 3920  具有偏移量
     }
 
     /**
