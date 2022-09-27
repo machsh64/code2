@@ -32,5 +32,7 @@
       <option name="IGNORE_POINT_TO_ITSELF" value="false" />
       <option name="myAdditionalJavadocTags" value="program:,author:,create:,description:,SuppressWarnings:抑制编译器警告,Deprecated：用于表示所修饰的元素（类,方法等）已过时，通常是因为所修饰的结构危险或存在更好的选择,Deprecated：用于表示所修饰的元素（类,方法等）已过时，通常是因为所修饰的结构危险或存在更好的选择" />
     </inspection_tool>
+    <inspection_tool class="SqlDialectInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>
