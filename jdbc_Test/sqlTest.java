@@ -1,5 +1,6 @@
-package JDBC;
+package jdbc_Test;
 
+import JDBC.JDBCUtil;
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -20,7 +21,7 @@ public class sqlTest {
                 "gender CHAR(1) COMMENT '性别') COMMENT '人员表'";
 
         System.out.println("连接数据库中");
-        Connection conn = JdbcUtil.getConnection("itcast");
+        Connection conn = JDBCUtil.getConnection("itcast");
         System.out.println("执行sql语句中");
         Statement statement = conn.createStatement();
         //创建了一个名为 md 的表
@@ -44,6 +45,8 @@ public class sqlTest {
             System.out.println(id + " " + name + " " + gender);
         }
         System.out.println("操作执行成功");
+
+        JDBCUtil.release(conn,statement,null);
     }
 
     @Test
@@ -51,11 +54,13 @@ public class sqlTest {
         //删除之前创建的表
         String sql = "DROP TABLE md";
         System.out.println("连接数据库中");
-        Connection conn = JdbcUtil.getConnection("itcast");
+        Connection conn = JDBCUtil.getConnection("itcast");
         System.out.println("执行sql语句中");
         Statement statement = conn.createStatement();
         //删除了一个名为 md 的表
         int resultSet = statement.executeUpdate(sql);
         System.out.println("操作执行成功");
+
+        JDBCUtil.release(conn,statement,null);
     }
 }

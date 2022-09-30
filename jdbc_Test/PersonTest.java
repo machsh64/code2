@@ -1,6 +1,6 @@
-package day13;
+package jdbc_Test;
 
-import JDBC.JdbcUtil;
+import JDBC.JDBCUtil;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,10 +14,10 @@ import java.sql.Statement;
  * @description:
  **/
 public class PersonTest {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args){
         String sql = "SELECT * FROM tb_user ORDER BY id";
-        Connection connection = JdbcUtil.getConnection("itcast");
-        Statement statement = connection.createStatement();
+        Connection connection = JDBCUtil.getConnection("itcast");
+ /*       Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
 
         while(resultSet.next()){
@@ -26,17 +26,14 @@ public class PersonTest {
             int age = resultSet.getInt("age");
             String gender = resultSet.getString("gender");
             System.out.println(id + " " +name+ "\t\t" + age + "\t" + gender);
-        }
+        }*/
 
-        insert(1006,"ttt",23,"女");
+        /*String sql1 = "INSERT INTO tb_user(id,name,age,gender) VALUES(?,?,?,?)";
+        JDBCUtil.update(connection,sql1,1007,"konjor",43,"男");*/
+        String sql1 = "UPDATE tb_user SET name = ? , age = ? , gender = ? WHERE id = ?";
+        JDBCUtil.update(connection,sql1,"lilise","25","女",1007);
 
-        connection.close();
-        statement.close();
-        resultSet.close();
-    }
-
-    public static void insert (int id,String name,int age,String gender){
-        String sql = "INSERT INTO tb_user(id,name,age,gender) VALUES(" + id + ",\'" + name + ",\'" + age + ",\'"+ gender + "\' )";
-         
+        //释放资源
+        /*JDBCUtil.release(connection,statement,resultSet);*/
     }
 }
