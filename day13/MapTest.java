@@ -66,7 +66,7 @@ public class MapTest {
 
     @Test
     public void test1() {
-        Map map = new HashMap<>();
+        Map<Integer,String> map = new HashMap<>();
         //Hash table不可以存储null的key和value
         /*map = new Hashtable();*/
         map.put(null, null);
@@ -175,7 +175,7 @@ public class MapTest {
 
         //遍历所有的value集  values()
         Collection<Object> coll = map.values();
-        Iterator iterator1 = coll.iterator();
+        Iterator<Object> iterator1 = coll.iterator();
         while (iterator1.hasNext()) {
             System.out.println(iterator1.next());
         }
@@ -183,11 +183,11 @@ public class MapTest {
         System.out.println("*************");
         //遍历所有的key-value
         //方式一：entrySet();
-        Set entrySet = map.entrySet();
-        Iterator iterator2 = entrySet.iterator();
+        Set<Map.Entry<Object,Object>> entrySet = map.entrySet();
+        Iterator<Map.Entry<Object,Object>> iterator2 = entrySet.iterator();
         while(iterator2.hasNext()){
             Object obj = iterator2.next();
-            Map.Entry entry = (Map.Entry)obj;
+            Map.Entry<Object,Object> entry = (Map.Entry)obj;
             System.out.println(entry.getKey()+"---->"+entry.getValue());
         }
 

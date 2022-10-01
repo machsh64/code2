@@ -45,7 +45,7 @@ public class TreeSetTest {
         set.add(new User("Jack",32));
         set.add(new User("Jack",56));
 
-        Iterator iterator = set.iterator();
+        Iterator<Object> iterator = set.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
@@ -53,7 +53,7 @@ public class TreeSetTest {
 
     @Test
     public void test2() {
-        Comparator<Object> com = new Comparator() {
+        Comparator<Object> com = new Comparator<Object>() {
             //按照年龄从小到大排列
             @Override
             public int compare(Object o1, Object o2) {
@@ -74,7 +74,7 @@ public class TreeSetTest {
         set.add(new User("Mary",32));
         set.add(new User("Jack",56));
 
-        Iterator iterator = set.iterator();
+        Iterator<Object> iterator = set.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }

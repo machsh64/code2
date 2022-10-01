@@ -58,6 +58,7 @@ public final class JDBCUtil {
                 throw new RuntimeException("配置文件中没有加载名为 " + url + " 的数据库");
             }
             conn = DriverManager.getConnection(url, username, password);
+            System.out.println("数据库连接成功");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -76,6 +77,7 @@ public final class JDBCUtil {
             if (resultSet != null) {
                 resultSet.close();
             }
+            System.out.println("资源释放完毕");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -149,7 +151,7 @@ public final class JDBCUtil {
 
     //创建该类时的快捷测试，可删除，但不建议，后续增加功能可在此处测试
     public static void main(String[] args) throws Exception {
-        String sql = "SELECT * FROM ? ORDER BY ?";
+        String sql = "SELECT * FROM tb_user ORDER BY id";
         //1，获取连接
         Connection conn = JDBCUtil.getConnection("itcast");
         //2，创建执行语句对象
