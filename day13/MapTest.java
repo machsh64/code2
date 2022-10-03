@@ -186,8 +186,7 @@ public class MapTest {
         Set<Map.Entry<Object,Object>> entrySet = map.entrySet();
         Iterator<Map.Entry<Object,Object>> iterator2 = entrySet.iterator();
         while(iterator2.hasNext()){
-            Object obj = iterator2.next();
-            Map.Entry<Object,Object> entry = (Map.Entry)obj;
+            Map.Entry<Object,Object> entry = iterator2.next();
             System.out.println(entry.getKey()+"---->"+entry.getValue());
         }
 

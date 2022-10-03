@@ -35,6 +35,26 @@ public class FindJPGFileTest {
 			}
 		}
 	}
+
+	public static void main(String[] args) {
+		File file = new File("D:\\machs");
+		try {
+			jpgFinder(file);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public static void jpgFinder(File file) {
+		File[] files = file.listFiles();
+		for (File filee : files) {
+		    if (filee.getName().endsWith(".jpg")){
+		    	System.out.println(filee.getAbsolutePath());
+			}else if (filee.isDirectory()){
+		    	jpgFinder(filee);
+			}
+		}
+	}
 	/*
 	 * File类提供了两个文件过滤器方法
 	 * public String[] list(FilenameFilter filter)
